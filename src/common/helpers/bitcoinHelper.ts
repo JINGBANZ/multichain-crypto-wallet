@@ -1,5 +1,5 @@
 import * as bitcoin from 'bitcoinjs-lib';
-import * as ecc from 'tiny-secp256k1';
+import ecc from '@bitcoinerlab/secp256k1';
 import { BIP32Factory } from 'bip32';
 import { ECPairFactory } from 'ecpair';
 import * as bip39 from 'bip39';
@@ -142,7 +142,8 @@ const transfer = async (args: TransferPayload) => {
       : utxolib.networks.testnet
   );
 
-  const fromAddress = getAddressFromPrivateKey(args.privateKey, args.network).address;
+  const fromAddress = getAddressFromPrivateKey(args.privateKey, args.network)
+    .address;
 
   const changeAddress = fromAddress;
   const endpoints = _apiFallbacks.fetchUTXOs(testnet, fromAddress, 0);
