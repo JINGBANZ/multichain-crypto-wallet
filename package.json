@@ -31,7 +31,7 @@
     "singleQuote": true,
     "trailingComma": "es5"
   },
-  "name": "multichain-crypto-wallet",
+  "name": "@jingbanz/multichain-crypto-wallet",
   "author": "iamnotstatic",
   "keywords": [
     "multichain",
